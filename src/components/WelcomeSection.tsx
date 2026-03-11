@@ -1,5 +1,36 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Shield, Leaf, Settings, Wrench, Package, Factory } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string }) => {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [isInView, target]);
+
+  return (
+    <p ref={ref} className="font-display text-4xl md:text-5xl font-bold text-accent">
+      {count}{suffix}
+    </p>
+  );
+};
 
 const features = [
   { icon: Shield, label: "Premium Materials & Expert Finish" },
