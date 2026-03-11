@@ -110,13 +110,13 @@ const WelcomeSection = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           {[
-            { number: "20+", label: "Years Experience" },
-            { number: "500+", label: "Projects Completed" },
-            { number: "50+", label: "Global Partners" },
-            { number: "100%", label: "Quality Assured" },
+            { target: 20, suffix: "+", label: "Years Experience" },
+            { target: 500, suffix: "+", label: "Projects Completed" },
+            { target: 50, suffix: "+", label: "Global Partners" },
+            { target: 100, suffix: "%", label: "Quality Assured" },
           ].map((stat) => (
             <div key={stat.label}>
-              <p className="font-display text-4xl md:text-5xl font-bold text-accent">{stat.number}</p>
+              <AnimatedCounter target={stat.target} suffix={stat.suffix} />
               <p className="font-body text-sm uppercase tracking-wider text-muted-foreground mt-2">{stat.label}</p>
             </div>
           ))}
