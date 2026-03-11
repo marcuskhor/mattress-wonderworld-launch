@@ -1,5 +1,36 @@
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Shield, Leaf, Settings, Wrench, Package, Factory } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+
+const AnimatedCounter = ({ target, suffix }: { target: number; suffix: string }) => {
+  const ref = useRef<HTMLParagraphElement>(null);
+  const isInView = useInView(ref, { once: true });
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!isInView) return;
+    const duration = 2000;
+    const steps = 60;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(current));
+      }
+    }, duration / steps);
+    return () => clearInterval(timer);
+  }, [isInView, target]);
+
+  return (
+    <p ref={ref} className="font-display text-4xl md:text-5xl font-bold text-accent">
+      {count}{suffix}
+    </p>
+  );
+};
 
 const features = [
   { icon: Shield, label: "Premium Materials & Expert Finish" },
@@ -79,13 +110,13 @@ const WelcomeSection = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
         >
           {[
-            { number: "20+", label: "Years Experience" },
-            { number: "500+", label: "Projects Completed" },
-            { number: "50+", label: "Global Partners" },
-            { number: "100%", label: "Quality Assured" },
+            { target: 20, suffix: "+", label: "Years Experience" },
+            { target: 500, suffix: "+", label: "Projects Completed" },
+            { target: 50, suffix: "+", label: "Global Partners" },
+            { target: 100, suffix: "%", label: "Quality Assured" },
           ].map((stat) => (
             <div key={stat.label}>
-              <p className="font-display text-4xl md:text-5xl font-bold text-accent">{stat.number}</p>
+              <AnimatedCounter target={stat.target} suffix={stat.suffix} />
               <p className="font-body text-sm uppercase tracking-wider text-muted-foreground mt-2">{stat.label}</p>
             </div>
           ))}
