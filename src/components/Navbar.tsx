@@ -70,7 +70,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-primary/98 backdrop-blur-md border-t border-primary-foreground/10">
+        <div className="md:hidden bg-white/98 backdrop-blur-md border-t border-border">
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.label}>
