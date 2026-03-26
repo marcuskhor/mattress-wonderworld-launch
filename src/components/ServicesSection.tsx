@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { Factory, Pencil, Globe, Handshake, Play, Check } from "lucide-react";
 
 const services = [
@@ -141,12 +142,12 @@ const ServicesSection = () => {
                 </div>
 
                 {/* Find out more link */}
-                <a
-                  href="#contact"
+                <Link
+                  to="/services"
                   className="mt-auto inline-flex items-center gap-1 font-body text-sm font-semibold text-accent uppercase tracking-wider hover:text-accent/80 transition-colors"
                 >
                   Find Out More &rsaquo;
-                </a>
+                </Link>
               </div>
 
               {/* Video area at bottom */}
