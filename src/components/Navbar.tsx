@@ -80,7 +80,7 @@ const Navbar = () => {
                   className={`text-sm font-body font-semibold uppercase tracking-widest transition-colors ${
                     location.pathname === link.href
                       ? "text-accent"
-                      : "text-primary-foreground/90 hover:text-accent"
+                      : "text-foreground/80 hover:text-accent"
                   }`}
                 >
                   {link.label}
