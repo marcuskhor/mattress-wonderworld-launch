@@ -23,8 +23,8 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-primary/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/95 backdrop-blur-md shadow-lg py-3"
+          : "bg-white py-5"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
@@ -41,7 +41,7 @@ const Navbar = () => {
                 className={`text-sm font-body font-semibold uppercase tracking-widest transition-colors ${
                   location.pathname === link.href
                     ? "text-accent"
-                    : "text-primary-foreground/90 hover:text-accent"
+                    : "text-foreground/80 hover:text-accent"
                 }`}
               >
                 {link.label}
@@ -60,7 +60,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-primary-foreground"
+          className="md:hidden text-foreground"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -70,7 +70,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-primary/98 backdrop-blur-md border-t border-primary-foreground/10">
+        <div className="md:hidden bg-white/98 backdrop-blur-md border-t border-border">
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.label}>
@@ -80,7 +80,7 @@ const Navbar = () => {
                   className={`text-sm font-body font-semibold uppercase tracking-widest transition-colors ${
                     location.pathname === link.href
                       ? "text-accent"
-                      : "text-primary-foreground/90 hover:text-accent"
+                      : "text-foreground/80 hover:text-accent"
                   }`}
                 >
                   {link.label}
