@@ -41,7 +41,7 @@ const Navbar = () => {
                 className={`text-sm font-body font-semibold uppercase tracking-widest transition-colors ${
                   location.pathname === link.href
                     ? "text-accent"
-                    : "text-foreground/80 hover:text-accent"
+                    : scrolled ? "text-foreground/80 hover:text-accent" : "text-white hover:text-accent"
                 }`}
               >
                 {link.label}
