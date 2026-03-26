@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -27,29 +28,33 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6">
-        <a href="#home" className="flex items-center gap-3">
-          <img src="/logo.png" alt="MFM Logo" className="h-12 w-auto" />
-        </a>
+        <Link to="/" className="flex items-center gap-3">
+          <img src="/logo.png" alt="MFM Logo" className="h-16 w-auto" />
+        </Link>
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="text-sm font-body font-semibold uppercase tracking-widest text-primary-foreground/90 hover:text-accent transition-colors"
+              <Link
+                to={link.href}
+                className={`text-sm font-body font-semibold uppercase tracking-widest transition-colors ${
+                  location.pathname === link.href
+                    ? "text-accent"
+                    : "text-primary-foreground/90 hover:text-accent"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
           <li>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="ml-2 px-6 py-2.5 bg-accent text-accent-foreground rounded font-body font-semibold text-sm uppercase tracking-wider hover:bg-accent/90 transition-colors"
             >
               Get Quote
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -69,23 +74,27 @@ const Navbar = () => {
           <ul className="flex flex-col items-center gap-6 py-8">
             {navLinks.map((link) => (
               <li key={link.label}>
-                <a
-                  href={link.href}
+                <Link
+                  to={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm font-body font-semibold uppercase tracking-widest text-primary-foreground/90 hover:text-accent transition-colors"
+                  className={`text-sm font-body font-semibold uppercase tracking-widest transition-colors ${
+                    location.pathname === link.href
+                      ? "text-accent"
+                      : "text-primary-foreground/90 hover:text-accent"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="px-6 py-2.5 bg-accent text-accent-foreground rounded font-body font-semibold text-sm uppercase tracking-wider"
               >
                 Get Quote
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
