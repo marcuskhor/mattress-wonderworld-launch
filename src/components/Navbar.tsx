@@ -60,7 +60,7 @@ const Navbar = () => {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden text-foreground"
+          className={`md:hidden ${scrolled ? "text-foreground" : "text-white"}`}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
