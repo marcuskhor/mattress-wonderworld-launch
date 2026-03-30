@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/mattress-wonderworld-launch">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
