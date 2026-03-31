@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div>
-            <img src="/logo.png" alt="MFM Logo" className="h-16 mb-4 brightness-200" />
+            <img src={`${import.meta.env.BASE_URL}logo.png`} alt="MFM Logo" className="h-16 mb-4 brightness-200" />
             <p className="font-body text-primary-foreground/60 text-sm leading-relaxed">
               Mastercraft Furniture Manufacturer — Crafting Comfort Since 2004. 
               Your trusted partner for premium mattress, sofa & bedframe manufacturing.

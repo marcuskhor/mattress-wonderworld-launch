@@ -29,7 +29,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-6">
         <Link to="/" className="flex items-center gap-3">
-          <img src="/logo.png" alt="MFM Logo" className="h-10 w-auto" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="MFM Logo" className="h-10 w-auto" />
         </Link>
 
         {/* Desktop nav */}
