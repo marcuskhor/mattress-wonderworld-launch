@@ -30,7 +30,7 @@ const services = [
       "Faster product launch",
       "Lower development cost",
     ],
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    video: "odm-video.mov",
   },
   {
     icon: Globe,
