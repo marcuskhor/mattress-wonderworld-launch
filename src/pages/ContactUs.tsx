@@ -233,6 +233,7 @@ const ContactUs = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
