@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
