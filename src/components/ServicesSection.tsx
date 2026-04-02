@@ -14,6 +14,7 @@ const services = [
       "Confidential production",
       "Your branding on every piece",
     ],
+    video: null,
   },
   {
     icon: Pencil,
@@ -27,6 +28,7 @@ const services = [
       "Faster product launch",
       "Lower development cost",
     ],
+    video: "odm-video.mov",
   },
   {
     icon: Globe,
@@ -40,6 +42,7 @@ const services = [
       "Staggered delivery options",
       "Installation support available",
     ],
+    video: null,
   },
   {
     icon: Handshake,
@@ -54,6 +57,7 @@ const services = [
       "Ready stock & display samples",
       "Marketing materials support",
     ],
+    video: null,
   },
 ];
 
