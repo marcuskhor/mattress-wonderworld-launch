@@ -44,7 +44,7 @@ const services = [
       "Staggered delivery options",
       "Installation support available",
     ],
-    video: null,
+    video: "project-supply-video.mp4",
   },
   {
     icon: Handshake,
