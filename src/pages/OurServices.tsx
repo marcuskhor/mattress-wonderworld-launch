@@ -16,7 +16,7 @@ const services = [
       "Confidential production",
       "Your branding on every piece",
     ],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    video: null,
   },
   {
     icon: Pencil,
@@ -30,7 +30,7 @@ const services = [
       "Faster product launch",
       "Lower development cost",
     ],
-    image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80",
+    video: "odm-video.mov",
   },
   {
     icon: Globe,
@@ -44,7 +44,7 @@ const services = [
       "Staggered delivery options",
       "Installation support available",
     ],
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+    video: null,
   },
   {
     icon: Handshake,
@@ -60,7 +60,7 @@ const services = [
       "Display samples for your showroom",
       "Marketing materials support",
     ],
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80",
+    video: null,
   },
 ];
 
@@ -119,15 +119,24 @@ const OurServices = () => {
                 index % 2 === 1 ? "lg:direction-rtl" : ""
               }`}
             >
-              {/* Image */}
+              {/* Media */}
               <div className={index % 2 === 1 ? "lg:order-2" : ""}>
                 <div className="relative rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
+                  {service.video ? (
+                    <video
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover"
+                    >
+                      <source src={`${import.meta.env.BASE_URL}${service.video}`} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <div className="w-full h-full bg-muted flex items-center justify-center">
+                      <service.icon size={48} className="text-muted-foreground/30" strokeWidth={1} />
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent" />
                   <div className="absolute bottom-6 left-6">
                     <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center">

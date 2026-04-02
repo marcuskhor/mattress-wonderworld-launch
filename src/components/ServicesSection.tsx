@@ -14,6 +14,7 @@ const services = [
       "Confidential production",
       "Your branding on every piece",
     ],
+    video: null,
   },
   {
     icon: Pencil,
@@ -27,6 +28,7 @@ const services = [
       "Faster product launch",
       "Lower development cost",
     ],
+    video: "odm-video.mov",
   },
   {
     icon: Globe,
@@ -40,6 +42,7 @@ const services = [
       "Staggered delivery options",
       "Installation support available",
     ],
+    video: null,
   },
   {
     icon: Handshake,
@@ -54,6 +57,7 @@ const services = [
       "Ready stock & display samples",
       "Marketing materials support",
     ],
+    video: null,
   },
 ];
 
@@ -151,20 +155,34 @@ const ServicesSection = () => {
               </div>
 
               {/* Video area at bottom */}
-              <div className="border-t border-border bg-muted/50 p-4">
-                <button className="w-full flex items-center justify-center gap-3 py-4 rounded-lg bg-primary/5 hover:bg-accent/10 transition-colors duration-300 group/play">
-                  <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center group-hover/play:bg-accent transition-colors duration-300">
-                    <Play
-                      size={16}
-                      className="text-accent group-hover/play:text-accent-foreground transition-colors ml-0.5"
-                      fill="currentColor"
-                    />
-                  </div>
-                  <span className="font-body text-xs uppercase tracking-wider text-muted-foreground group-hover/play:text-foreground transition-colors">
-                    Watch Video
-                  </span>
-                </button>
-              </div>
+              {service.video ? (
+                <div className="border-t border-border bg-muted/50 p-4">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full rounded-lg aspect-video object-cover"
+                  >
+                    <source src={`${import.meta.env.BASE_URL}${service.video}`} type="video/mp4" />
+                  </video>
+                </div>
+              ) : (
+                <div className="border-t border-border bg-muted/50 p-4">
+                  <button className="w-full flex items-center justify-center gap-3 py-4 rounded-lg bg-primary/5 hover:bg-accent/10 transition-colors duration-300 group/play">
+                    <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center group-hover/play:bg-accent transition-colors duration-300">
+                      <Play
+                        size={16}
+                        className="text-accent group-hover/play:text-accent-foreground transition-colors ml-0.5"
+                        fill="currentColor"
+                      />
+                    </div>
+                    <span className="font-body text-xs uppercase tracking-wider text-muted-foreground group-hover/play:text-foreground transition-colors">
+                      Watch Video
+                    </span>
+                  </button>
+                </div>
+              )}
             </motion.div>
           ))}
         </motion.div>
