@@ -44,7 +44,7 @@ const services = [
       "Staggered delivery options",
       "Installation support available",
     ],
-    image: "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80",
+    video: null,
   },
   {
     icon: Handshake,
