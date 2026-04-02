@@ -16,7 +16,7 @@ const services = [
       "Confidential production",
       "Your branding on every piece",
     ],
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    video: null,
   },
   {
     icon: Pencil,
