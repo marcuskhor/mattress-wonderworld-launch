@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Send, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, MessageCircle } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -92,7 +93,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-foreground mb-1">Phone</h4>
-                    <p className="font-body text-sm text-muted-foreground">+60 12-345 6789</p>
+                    <p className="font-body text-sm text-muted-foreground">0184718996</p>
                   </div>
                 </div>
 
@@ -102,7 +103,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-foreground mb-1">Email</h4>
-                    <p className="font-body text-sm text-muted-foreground">info@mfm.com.my</p>
+                    <p className="font-body text-sm text-muted-foreground">mastercraftmanufacturer@gmail.com</p>
                   </div>
                 </div>
 
@@ -117,6 +118,16 @@ const ContactUs = () => {
                   </div>
                 </div>
               </div>
+
+              <a
+                href="https://wa.me/60184718996"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-lg font-body text-sm font-semibold hover:bg-[#20bd5a] transition-colors"
+              >
+                <MessageCircle size={20} />
+                Chat on WhatsApp
+              </a>
             </motion.div>
 
             {/* Contact Form */}
@@ -222,6 +233,7 @@ const ContactUs = () => {
       </section>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 };

@@ -11,7 +11,7 @@ const HeroSlideshow = () => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src={`${import.meta.env.BASE_URL}hero-video.mp4`} type="video/mp4" />
+        <source src={`${import.meta.env.BASE_URL}hero-video.mov`} type="video/mp4" />
       </video>
       <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/50 to-transparent" />
 
