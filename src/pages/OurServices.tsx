@@ -60,7 +60,7 @@ const services = [
       "Display samples for your showroom",
       "Marketing materials support",
     ],
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80",
+    video: null,
   },
 ];
 
