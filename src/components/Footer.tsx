@@ -65,14 +65,25 @@ const Footer = () => {
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-accent flex-shrink-0" />
                 <span className="font-body text-sm text-primary-foreground/60">
-                  +60 12-345 6789
+                  0184718996
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={18} className="text-accent flex-shrink-0" />
                 <span className="font-body text-sm text-primary-foreground/60">
-                  info@mfm.com.my
+                  mastercraftmanufacturer@gmail.com
                 </span>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://wa.me/60184718996"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#25D366] text-white rounded-lg font-body text-sm font-semibold hover:bg-[#20bd5a] transition-colors"
+                >
+                  <MessageCircle size={18} />
+                  WhatsApp Us
+                </a>
               </div>
             </div>
           </div>

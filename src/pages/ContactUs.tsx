@@ -117,6 +117,16 @@ const ContactUs = () => {
                   </div>
                 </div>
               </div>
+
+              <a
+                href="https://wa.me/60184718996"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#25D366] text-white rounded-lg font-body text-sm font-semibold hover:bg-[#20bd5a] transition-colors"
+              >
+                <MessageCircle size={20} />
+                Chat on WhatsApp
+              </a>
             </motion.div>
 
             {/* Contact Form */}
