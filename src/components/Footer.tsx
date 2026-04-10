@@ -59,13 +59,13 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-accent mt-0.5 flex-shrink-0" />
                 <span className="font-body text-sm text-primary-foreground/60">
-                  Malaysia
+                  793, LOT 278, BATU 11, 43200 Cheras, Selangor
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={18} className="text-accent flex-shrink-0" />
                 <span className="font-body text-sm text-primary-foreground/60">
-                  0184718996
+                  012-762 9892
                 </span>
               </div>
               <div className="flex items-center gap-3">

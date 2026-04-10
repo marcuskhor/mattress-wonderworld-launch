@@ -57,6 +57,7 @@ const services = [
       "Ready stock & display samples",
       "Marketing materials support",
     ],
+    image: "retailer-partnership.jpg",
     video: null,
   },
 ];

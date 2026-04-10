@@ -60,6 +60,7 @@ const services = [
       "Display samples for your showroom",
       "Marketing materials support",
     ],
+    image: "retailer-partnership.jpg",
     video: null,
   },
 ];
