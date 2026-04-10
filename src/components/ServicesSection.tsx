@@ -136,10 +136,10 @@ const ServicesSection = () => {
                   {service.offers.map((offer) => (
                     <div key={offer} className="flex items-start gap-2">
                       <Check
-                        size={14}
+                        size={16}
                         className="text-accent mt-0.5 flex-shrink-0"
                       />
-                      <span className="font-body text-xs text-muted-foreground">
+                      <span className="font-body text-sm text-muted-foreground">
                         {offer}
                       </span>
                     </div>
