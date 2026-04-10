@@ -60,6 +60,7 @@ const services = [
       "Display samples for your showroom",
       "Marketing materials support",
     ],
+    image: "retailer-partnership.jpg",
     video: null,
   },
 ];
@@ -132,7 +133,14 @@ const OurServices = () => {
                     >
                       <source src={`${import.meta.env.BASE_URL}${service.video}`} type="video/mp4" />
                     </video>
-                  ) : (
+                   ) : service.image ? (
+                    <img
+                      src={`${import.meta.env.BASE_URL}${service.image}`}
+                      alt={service.title}
+                      loading="lazy"
+                      className="w-full h-full object-cover"
+                    />
+                   ) : (
                     <div className="w-full h-full bg-muted flex items-center justify-center">
                       <service.icon size={48} className="text-muted-foreground/30" strokeWidth={1} />
                     </div>

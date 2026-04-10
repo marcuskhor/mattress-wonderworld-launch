@@ -83,7 +83,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-foreground mb-1">Address</h4>
-                    <p className="font-body text-sm text-muted-foreground">Malaysia</p>
+                    <p className="font-body text-sm text-muted-foreground">793, LOT 278, BATU 11, 43200 Cheras, Selangor</p>
                   </div>
                 </div>
 
@@ -93,7 +93,7 @@ const ContactUs = () => {
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-foreground mb-1">Phone</h4>
-                    <p className="font-body text-sm text-muted-foreground">0184718996</p>
+                    <p className="font-body text-sm text-muted-foreground">012-762 9892</p>
                   </div>
                 </div>
 

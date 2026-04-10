@@ -57,6 +57,7 @@ const services = [
       "Ready stock & display samples",
       "Marketing materials support",
     ],
+    image: "retailer-partnership.jpg",
     video: null,
   },
 ];
@@ -154,7 +155,7 @@ const ServicesSection = () => {
                 </Link>
               </div>
 
-              {/* Video area at bottom */}
+              {/* Media area at bottom */}
               {service.video ? (
                 <div className="border-t border-border bg-muted/50 p-4">
                   <video
@@ -166,6 +167,15 @@ const ServicesSection = () => {
                   >
                     <source src={`${import.meta.env.BASE_URL}${service.video}`} type="video/mp4" />
                   </video>
+                </div>
+              ) : service.image ? (
+                <div className="border-t border-border bg-muted/50 p-4">
+                  <img
+                    src={`${import.meta.env.BASE_URL}${service.image}`}
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full rounded-lg aspect-video object-cover"
+                  />
                 </div>
               ) : (
                 <div className="border-t border-border bg-muted/50 p-4">
