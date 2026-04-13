@@ -4,15 +4,9 @@
     <meta charset="utf-8">
     <script>
       // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      var pathSegmentsToKeep = 1;
       var l = window.location;
-      var repoPath = l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/');
-      var remaining = l.pathname.slice(repoPath.length);
-      if (remaining) {
-        sessionStorage.redirect = l.href;
-        l.replace(repoPath + '/');
-      }
+      sessionStorage.redirect = l.href;
+      l.replace('/');
     </script>
   </head>
 </html>
